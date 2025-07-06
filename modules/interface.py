@@ -1,4 +1,3 @@
-from modules.datas import *
 def use_colours(colour):
     colours = {
         'clean': '\033[m',
@@ -15,6 +14,7 @@ def use_colours(colour):
     return colours[colour]
 
 def menu(lst):
+    from modules.datas import readInt
     for index, lst in enumerate(lst, start=1):
         print(f"{use_colours('blue')}{index} - {lst}{use_colours('clean')}")
     line()

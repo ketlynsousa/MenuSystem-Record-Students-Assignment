@@ -1,10 +1,8 @@
 from modules.interface import *
 from modules.datas import *
-
-data_file = 'students_record_file.py'
-
+from students_record_file import *
+register_list = list()
 while True:
-    register_list = list()
     heading("STUDENTS RECORD SYSTEM")
     menu_options = menu(['RECORD NEW STUDENT', 'CONSULT REGISTRATION', 'FILTER STUDENTS', 'GENERAL STATISTICS', 'EXIT THE SYSTEM'])
 
@@ -17,10 +15,14 @@ while True:
             if gender in ('F', 'M'):
                 break
             else:
-                print("Invalid option. ", end='')
+                print(f"{use_colours('red')}Invalid option. {use_colours('clean')}", end='')
         average_grade = readFloat("Enter final average grade: ")
+        register_list.append([name, age, gender, average_grade])
+
     elif menu_options == 2:
-        heading('opt2')
+        heading('CONSULTING RECORDS')
+        showTable(register_list)
+
     elif menu_options == 3:
         heading('opt3')
     elif menu_options == 4:

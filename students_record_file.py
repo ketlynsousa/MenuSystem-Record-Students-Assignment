@@ -1,7 +1,6 @@
 from tabulate import tabulate
-def showTable(lst):
-    recording_table = [
-    [' NAME ', ' AGE ', ' GENDER ', ' AVERAGE '],
-    lst.append()]
-    table = tabulate(recording_table, headers="firstrow")
-    return print(tabulate(recording_table, tablefmt="grid"))
+def showTable(lst: list):
+    table = lst
+    headers = ['NAME', 'AGE', 'GENDER', 'AVERAGE']
+    print(tabulate(table, headers, tablefmt="fancy_grid", stralign='center', numalign='center'))
+

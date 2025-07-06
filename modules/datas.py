@@ -22,3 +22,4 @@ def readFloat(txt):
             return 0.0
         else:
             return num
+from modules.interface import use_colours
