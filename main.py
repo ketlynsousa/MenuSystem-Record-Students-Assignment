@@ -19,7 +19,15 @@ while True:
         heading('RECORD NEW STUDENT')
 
         name = str(input('Enter the name: ')).strip().title()
-        age = readInt("Enter the age: ")
+        while True:
+            try:
+                age = readInt("Enter the age: ")
+                if age <= 0:
+                    raise ValueError
+                break
+            except ValueError:
+                print(f"{use_colours('red')}ERROR! Enter a valid age. {use_colours('clean')}")
+
         while True:
             gender = str(input("Enter gender: [F/M] ")).upper().strip()
             if gender in ('F', 'M'):
