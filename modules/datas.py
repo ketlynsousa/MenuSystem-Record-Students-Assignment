@@ -10,6 +10,7 @@ def readInt(txt):
         else:
             return num
 
+
 def readFloat(txt):
     while True:
         try:
